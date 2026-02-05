@@ -76,7 +76,7 @@ If using MinIO, ensure your bucket policy allows public reads or provide a `s3_p
 Example policy setup (MinIO client):
 
 ```bash
-s3cmd setpolicy /tmp/bucket-policy.json s3://morphs
+s3cmd setpolicy ./bucket-policy.json s3://morphs
 ```
 
 ## Folder Structure

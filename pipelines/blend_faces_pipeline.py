@@ -18,11 +18,11 @@ from typing import Union, Generator, Iterator, List
 class Pipeline:
     class Valves(BaseModel):
         # Vision (Ollama native chat endpoint)
-        vision_url: str = Field(default="http://10.10.20.197:11434")
+        vision_url: str = Field(default="http://localhost:11434")
         vision_model: str = Field(default="llama3.2-vision:latest")
 
         # Image generation (Ollama OpenAI-compatible endpoint)
-        gen_url: str = Field(default="http://10.10.20.140:11434")
+        gen_url: str = Field(default="http://localhost:11434")
         gen_model: str = Field(default="x/flux2-klein:latest")
 
         # Generation controls (OpenAI images-compatible)
@@ -39,7 +39,7 @@ class Pipeline:
         s3_public_url: str = Field(default="", description="Public URL for S3 objects")
 
     def __init__(self):
-        self.name = "K8s Dual-Node Morpher (OpenAI Images)"
+        self.name = "Dual-Node Blender (OpenAI Images)"
         self.valves = self.Valves()
 
     # ---------- helpers ----------
@@ -209,7 +209,7 @@ class Pipeline:
         with open(filepath, "wb") as f:
             f.write(image_data)
 
-        static_server_url = os.environ.get("STATIC_SERVER_URL", "http://10.10.20.140:9098")
+        static_server_url = os.environ.get("STATIC_SERVER_URL", "http://localhost:9099")
         return f"{static_server_url}/morphs/{filename}"
 
     # ---------- main pipeline ----------

@@ -1,0 +1,8 @@
+k8s
+static
+tmp
+static_server.py
+pipelines/__pycache__/
+pipelines/failed/
+pipelines/static_server/pipelines/
+image_morpher_pipeline/

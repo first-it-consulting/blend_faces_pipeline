@@ -114,15 +114,15 @@ class Pipeline:
     def _detect_subject_type(self, user_instruction: str) -> str:
         s = (user_instruction or "").lower()
         if any(w in s for w in ["newborn", "infant", "baby"]):
-            return "a baby (0–2 years old)"
+            return "a baby (0-2 years old)"
         if any(w in s for w in ["child", "kid", "son", "daughter"]) and "baby" not in s:
-            return "a young child (3–8 years old)"
+            return "a young child (3-8 years old)"
         if any(w in s for w in ["preteen", "pre-teenager", "pre-teen"]):
-            return "a teenager (9–12 years old)"
+            return "a teenager (9-12 years old)"
         if any(w in s for w in ["teen", "teenager", "adolescent"]):
-            return "a teenager (13–17 years old)"
+            return "a teenager (13-17 years old)"
         if any(w in s for w in ["young adult", "college"]):
-            return "a young adult (18–25 years old)"
+            return "a young adult (18-25 years old)"
         return "a person"
 
     def _traits_to_compact_line(self, traits: dict) -> str:
@@ -233,7 +233,7 @@ class Pipeline:
                 vision_prompt = (
                     "Return ONLY valid JSON (no markdown) describing visible facial traits.\n"
                     "Keys: ethnicity, eye_color, hair_color, hair_texture, skin_tone, face_shape, nose, lips, jaw, notable_marks.\n"
-                    "Keep each value short (1–6 words). No opinions, no style words.\n\n"
+                    "Keep each value short (1-6 words). No opinions, no style words.\n\n"
                     "Example response:\n"
                     '{"ethnicity": "East Asian", "eye_color": "brown", "hair_color": "dark brown", "hair_texture": "straight", '
                     '"skin_tone": "light", "face_shape": "oval", "nose": "petite", '

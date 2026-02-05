@@ -69,6 +69,38 @@ docker run --rm -p 9099:9099 \
   ghcr.io/open-webui/pipelines:main
 ```
 
+## Static File Server (Optional)
+
+If you want local image URLs that can be opened by clients, run the included static server:
+
+```bash
+python3 static_server.py
+```
+
+Or run it in Docker (simple, no image build needed):
+
+```bash
+docker run --rm -p 9098:9098 \
+  -v $(pwd)/static:/app/static \
+  -w /app \
+  python:3.11-slim \
+  python /app/../static_server.py
+```
+
+By default it serves [static](static) on port `9098` and exposes images at:
+
+```
+http://localhost:9098/morphs/
+```
+
+To make the pipeline return those URLs, set:
+
+```
+STATIC_SERVER_URL=http://localhost:9098
+```
+
+You can pass this into the pipelines container as an environment variable if needed.
+
 ## S3/MinIO Setup
 
 If using MinIO, ensure your bucket policy allows public reads or provide a `s3_public_url`.

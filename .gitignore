@@ -1,7 +1,6 @@
 k8s
 static
 tmp
-static_server.py
 pipelines/__pycache__/
 pipelines/failed/
 pipelines/blend_faces_pipeline/

@@ -62,8 +62,7 @@ Run the Open WebUI pipelines container with this repo mounted:
 docker stop pipelines-dev && \
 docker run --rm -p 9099:9099 \
   -e PIPELINES_STATIC_DIR=/app/static \
-  -e PIPELINE_URL=http://10.10.20.140:9099 \
-  -e STATIC_SERVER_URL=http://10.10.20.140:9098 \
+  -e PIPELINE_URL=http://localhost:9099 \
   -v $(pwd)/pipelines:/app/pipelines \
   -v $(pwd)/static:/app/static \
   --name pipelines-dev \

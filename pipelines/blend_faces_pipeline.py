@@ -2,6 +2,8 @@
 title: Dual-Node Blender (OpenAI Images API, Multi-Variant, Compact Traits)
 author: first-it-consulting.de
 description: Uses Llama 3.2 Vision to extract compact facial traits (JSON) from 2 images, then generates multiple photorealistic "blended" candidates via Ollama OpenAI-compatible /v1/images/generations. Stores results locally or on S3/MinIO.
+date: 2026-02-05
+license: MIT
 version: 3.1
 requirements:
     - requests

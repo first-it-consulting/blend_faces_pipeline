@@ -126,6 +126,8 @@ class Pipeline:
             return "a teenager (13-17 years old)"
         if any(w in s for w in ["young adult", "college"]):
             return "a young adult (18-25 years old)"
+        if any(w in s for w in ["adult", "eldery"]):
+            return "a adult or eldery (26+ years old)"
         return "a person"
 
     def _traits_to_compact_line(self, traits: dict) -> str:

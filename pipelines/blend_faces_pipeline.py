@@ -42,7 +42,7 @@ class Pipeline:
         s3_public_url: str = Field(default="", description="Public URL for S3 objects")
 
     def __init__(self):
-        self.name = "Dual-Node Blender (Ollama Images)"
+        self.name = "Dual-Node Blender Faces"
         self.valves = self.Valves()
 
     # ---------- helpers ----------

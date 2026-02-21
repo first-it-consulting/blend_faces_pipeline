@@ -5,7 +5,7 @@ description: Uses Llama 3.2 Vision to extract compact facial traits (JSON) from 
 date: 2026-02-05
 license: MIT
 version: 3.2
-requirements: requests, pydantic, boto3
+requirements: requests, pydantic==2.9.2, boto3
 """
 
 import requests
